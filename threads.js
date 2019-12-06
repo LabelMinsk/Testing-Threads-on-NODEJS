@@ -4,36 +4,16 @@ const crypto = require('crypto');
 
 const start = Date.now();
 
-crypto.pbkdf2('a','b', 100000, 512, 'sha512',()=>{
-    console.log('1:', Date.now() - start);
-    });
+function doHash(count){
+   crypto.pbkdf2('a','b', 100000, 512, 'sha512',()=>{
+    console.log(count, Date.now() - start);
+    }); 
+};
+doHash('1');
+doHash('2');
+doHash('3');
+doHash('4');
+doHash('5');
+doHash('6');
+doHash('7');
 
-crypto.pbkdf2('a','b',100000,512,'sha512',()=>{
-    console.log('2:', Date.now() - start);
-    });
-    
-crypto.pbkdf2('a','b',100000,512,'sha512',()=>{
-    console.log('3:', Date.now() - start);
-    });
-
-crypto.pbkdf2('a','b',100000,512,'sha512',()=>{
-    console.log('4:', Date.now() - start);
-    });
-crypto.pbkdf2('a','b',100000,512,'sha512',()=>{
-    console.log('5:', Date.now() - start);
-    });
-
-crypto.pbkdf2('a','b',100000,512,'sha512',()=>{
-    console.log('6:', Date.now() - start);
-    });
-    
-crypto.pbkdf2('a','b',100000,512,'sha512',()=>{
-    console.log('7:', Date.now() - start);
-    });
-
-crypto.pbkdf2('a','b',100000,512,'sha512',()=>{
-    console.log('8:', Date.now() - start);
-    });
-crypto.pbkdf2('a','b',100000,512,'sha512',()=>{
-    console.log('9:', Date.now() - start);
-    });
